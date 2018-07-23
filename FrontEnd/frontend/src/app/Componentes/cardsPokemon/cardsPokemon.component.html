@@ -1,0 +1,38 @@
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Pokemon</h3>
+    <br>
+    <div class="row">
+      <div *ngFor="let pokemon of listaAMostrar" class="col-sm-3" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>{{pokemon.nombrePokemon}}</h5>
+              <label>Numero: {{pokemon.numeroPokemon}}</label>
+            </div>
+            <div class="col-sm-6">
+              <img src="{{pokemon.urlImg}}" alt="Usuario Foto">
+            </div>
+          </div>
+          <button mat-stroked-button color="primary">Pedir Transfrencia</button>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" (click)="prev()" [disabled]="paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" style="width: 100%;" (click)="next()" [disabled]="paginaActual===cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>
+
